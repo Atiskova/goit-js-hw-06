@@ -9,24 +9,25 @@ const ingredients = [
 
 
 
-const galleryListEl = document.querySelector('.js-gallery');
+const ingredientsListEl = document.querySelector('#ingredients');
 
-// Функція для створення карточки makeGalleryCard(cardInfo)
-const makeGalleryCard = ({ width, height, url, alt } = {}) => {
-  return `
-    <li class="gallery-item">
-      <a href="#">
-        <img src="${url}" alt="${alt}" width="${width}" height="${height}">
-      </a>
-    </li>
-  `;
+// Функція
+const makeIngredientsCard = ( ingredient  = {}) => {
+  // Створення li
+  const ingredientsListEl = document.createElement('li');
+  ingredientsListEl.classList.add('item');
+
+  const ingredientsTextEl = document.createElement('p');
+  ingredientsTextEl.innerHTML = ingredient;
+  ingredientsListEl.append(ingredientsTextEl);
+
+  return ingredientsListEl;
 };
 
-// Створення масиву рядків із елементами
-const galleryCards = pictures.map((el, idx, arr) => {
-  return makeGalleryCard(el);
+// Перебір масиву через map
+const ingredientsCardsEl = ingredients.map((el, idx, arr) => {
+  return makeIngredientsCard(el);
 });
 
-// Вставка елементів на сторінку
-// galleryListEl.innerHTML = galleryCards.join('');
-galleryListEl.insertAdjacentHTML('beforeend', galleryCards.join(''));
+// Вставка на сторінку
+ingredientsListEl.append(...ingredientsCardsEl);  
