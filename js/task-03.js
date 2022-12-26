@@ -1,25 +1,28 @@
 const images = [
   {
-    url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'White and Black Long Fur Cat',
+    url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "White and Black Long Fur Cat",
   },
   {
-    url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+    url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
   },
   {
-    url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'Group of Horses Running',
+    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    alt: "Group of Horses Running",
   },
 ];
 
-const galleryListEl = document.querySelector('.gallery');
-galleryListEl.setAttribute("style", "list-style-type:none; display: flex; flex-wrap: wrap; gap: 30px;")
+const galleryListEl = document.querySelector(".gallery");
+galleryListEl.setAttribute(
+  "style",
+  "list-style-type:none; display: flex; flex-wrap: wrap; gap: 30px;"
+);
 
 // galleryListEl.style.list-style = "none";
-console.log(galleryListEl)
+console.log(galleryListEl);
 // Функція для створення карточки makeGalleryCard(cardInfo)
-const makeGalleryCard = ({  url, alt } = {}) => {
+const makeGalleryCard = ({ url, alt } = {}) => {
   return `
     <li class="gallery-item">
       <a href="#">
@@ -35,4 +38,4 @@ const galleryCards = images.map((el, idx, arr) => {
 });
 
 // Вставка елементів на сторінку
-galleryListEl.insertAdjacentHTML('beforeend', galleryCards.join(''));
+galleryListEl.insertAdjacentHTML("beforeend", galleryCards.join(""));

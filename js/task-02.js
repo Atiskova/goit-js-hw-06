@@ -1,23 +1,21 @@
 const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
+  "Potatoes",
+  "Mushrooms",
+  "Garlic",
+  "Tomatos",
+  "Herbs",
+  "Condiments",
 ];
 
-
-
-const ingredientsListEl = document.querySelector('#ingredients');
+const ingredientsListEl = document.querySelector("#ingredients");
 
 // Функція
-const makeIngredientsCard = ( ingredient  = {}) => {
+const makeIngredientsCard = (ingredient = {}) => {
   // Створення li
-  const ingredientsListEl = document.createElement('li');
-  ingredientsListEl.classList.add('item');
+  const ingredientsListEl = document.createElement("li");
+  ingredientsListEl.classList.add("item");
 
-  const ingredientsTextEl = document.createElement('p');
+  const ingredientsTextEl = document.createElement("p");
   ingredientsTextEl.innerHTML = ingredient;
   ingredientsListEl.append(ingredientsTextEl);
 
@@ -30,4 +28,4 @@ const ingredientsCardsEl = ingredients.map((el, idx, arr) => {
 });
 
 // Вставка на сторінку
-ingredientsListEl.append(...ingredientsCardsEl);  
+ingredientsListEl.append(...ingredientsCardsEl);
